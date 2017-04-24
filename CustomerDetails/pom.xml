@@ -19,9 +19,7 @@
 		<mule.munit.support.version>3.8.3</mule.munit.support.version>
 		<mysql.connector.version>6.0.6</mysql.connector.version>
 
-		<!-- This is the domain where the app will be deployed: i.e. mydomain.cloudhub.io -->
-		<cloudhub.domain>customerdetails</cloudhub.domain>
-	</properties>
+		</properties>
 
 	<build>
 		<plugins>
