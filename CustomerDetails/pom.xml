@@ -20,7 +20,7 @@
 		<mysql.connector.version>6.0.6</mysql.connector.version>
 
 		<!-- This is the domain where the app will be deployed: i.e. mydomain.cloudhub.io -->
-		<cloudhub.domain>mydomain</cloudhub.domain>
+		<cloudhub.domain>customerdetails.cloudhub.io</cloudhub.domain>
 	</properties>
 
 	<build>
