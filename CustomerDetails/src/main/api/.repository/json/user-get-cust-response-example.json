@@ -1,0 +1,11 @@
+{
+  "customer":{
+         "firstName":"Albert",
+         "lastName":"Einstein",
+         "subRate":"67",
+         "startDate":"2017-06-02",
+         "bill":"67",
+         "address":"403,batman street"
+}
+}      
+
