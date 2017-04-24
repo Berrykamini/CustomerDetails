@@ -7,6 +7,9 @@
     "lastName": {
       "type": "string"
     },
+    "customerId": {
+      "type": "string"
+    },
     "subscriptionRate": {
         "type": "string"
     },

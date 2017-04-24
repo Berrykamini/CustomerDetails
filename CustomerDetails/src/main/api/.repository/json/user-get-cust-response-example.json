@@ -1,11 +1,14 @@
 {
-  "customer":{
-         "firstName":"Albert",
-         "lastName":"Einstein",
-         "subRate":"67",
-         "startDate":"2017-06-02",
-         "bill":"67",
-         "address":"403,batman street"
+  "customer":
+  [
+   {
+    "startDate": 1492729200000,
+    "lastName": "Berry",
+    "subscriptionRate": "67",
+    "customerId": 1234,
+    "lastBill": "45",
+    "address": "33 batman street",
+    "firstName": "Kamini"
+    }
+  ]
 }
-}      
-
