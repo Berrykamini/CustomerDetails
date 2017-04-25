@@ -26,7 +26,17 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
     <sub-flow name="SimulateDBFlow">
         <choice doc:name="Customer Choice">
             <when expression="#[sessionVars.queryVar.customerId=='1234']">
-                <set-payload value="[{&quot;startDate&quot;:1492729200000,&quot;lastName&quot;:&quot;Berry&quot;,&quot;subrate&quot;:&quot;67&quot;,&quot;idcustomer&quot;:1234,&quot;lastBill&quot;:&quot;45&quot;,&quot;address&quot;:&quot;33 batman street&quot;,&quot;firstName&quot;:&quot;Kamini&quot;}]" doc:name="Set Customer Payload"/>
+                <set-payload value="[
+  {
+    &quot;startDate&quot;: 1492729200000,
+    &quot;lastName&quot;: &quot;Berry&quot;,
+    &quot;subsciptionRate&quot;: &quot;67&quot;,
+    &quot;lastBill&quot;: &quot;45&quot;,
+    &quot;address&quot;: &quot;33 batman street&quot;,
+    &quot;firstName&quot;: &quot;Kamini&quot;,
+    &quot;customerId&quot;: 1234
+  }
+]" doc:name="Set Customer Payload"/>
                 <logger message="Simulate Db Customer Payload" level="INFO" doc:name="Logger"/>
                 <flow-ref name="customerFoundFlow" doc:name="customerFoundFlow"/>
             </when>
@@ -39,7 +49,7 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
     </sub-flow>
     <sub-flow name="ActualDBFlow">
         <db:select config-ref="MySQL_Configuration" doc:name="Get count from DB">
-            <db:parameterized-query><![CDATA[select * from customerdetails.customer where idcustomer = #[sessionVars.queryVar.customerId]]]></db:parameterized-query>
+            <db:parameterized-query><![CDATA[select firstName, lastName, c.idcustomer AS customerId, c.subrate AS subsciptionRate, startDate, lastBill, address  from customerdetails.customer c where c.idcustomer = #[sessionVars.queryVar.customerId]]]></db:parameterized-query>
         </db:select>
         <logger message="#[payload]" level="INFO" doc:name="DB count Logger"/>
         <logger message="#[payload.size()]" level="INFO" doc:name="Payload Size Logger"/>
